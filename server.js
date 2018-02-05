@@ -11,7 +11,7 @@ const tw = new Twitter({
   access_token_key: '542173666-krGq8D6LROv6mWfrIUOy3J6dUiG4Ll8Cb9MhhJuN', // Access Tokenを記述
   access_token_secret: 'QmZAx5VPEJT709IlEAE6gy6KYqEmW0tL3nWoIBw3MiJZc' // Access Token Secretを記述
 });
-const TARGET_HASHTAG = '#xrp';
+const TARGET_HASHTAG = '#TrainDelay';
 
 const HOST = 'api.line.me';
 const CH_SECRET = 'c092cd24c7204931d2e0409dd57926f1'; // Channel Secretを記述
@@ -58,7 +58,7 @@ const pushClient = (userId, SendMessageObject) => {
 
 tw.stream('statuses/filter', {'track': TARGET_HASHTAG}, (stream) => {
   stream.on('data', (data) => {
-    if (data.text.indexOf('xrp') !== -1) {
+    if (data.text.indexOf('南武線' || '横須賀線' || '湘南新宿ライン' || '東横線' || '目黒線') !== -1) {
         let PushSendMessageObject = [{
           type: 'text',
           text: data.text
