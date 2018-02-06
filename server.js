@@ -24,7 +24,7 @@ const PORT = 3000;
 const pushClient = (userId, SendMessageObject) => {
     let postDataStr = JSON.stringify({ to: userId, messages: SendMessageObject });
     let options = {
-        host: HOST,
+(        host: HOST,
         port: 443,
         path: PUSH_PATH,
         method: 'POST',
@@ -86,7 +86,7 @@ tw.stream('statuses/filter', {'track': TARGET_HASHTAG}, (stream) => {
         console.log(data.text);
     }
 
-    if (data.text.indexOf'湘南新宿ライン') !== -1) {
+    if (data.text.indexOf('湘南新宿ライン') !== -1) {
         let PushSendMessageObject = [{
           type: 'text',
           text: data.text
@@ -100,7 +100,7 @@ tw.stream('statuses/filter', {'track': TARGET_HASHTAG}, (stream) => {
         console.log(data.text);
     }
 
-    if (data.text.indexOf'東横線') !== -1) {
+    if (data.text.indexOf('東横線') !== -1) {
         let PushSendMessageObject = [{
           type: 'text',
           text: data.text
