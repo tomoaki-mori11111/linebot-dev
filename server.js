@@ -58,7 +58,63 @@ const pushClient = (userId, SendMessageObject) => {
 
 tw.stream('statuses/filter', {'track': TARGET_HASHTAG}, (stream) => {
   stream.on('data', (data) => {
-    if (data.text.indexOf('南武線' || '横須賀線' || '湘南新宿ライン' || '東横線' || '目黒線') !== -1) {
+    if (data.text.indexOf('南武線') !== -1) {
+        let PushSendMessageObject = [{
+          type: 'text',
+          text: data.text
+        }];
+
+        pushClient([USER_ID], PushSendMessageObject)
+          .then((body) => {
+            console.log(body);
+          }, (e) => {console.log(e)});
+
+        console.log(data.text);
+    }
+    
+     if (data.text.indexOf('横須賀線') !== -1) {
+        let PushSendMessageObject = [{
+          type: 'text',
+          text: data.text
+        }];
+
+        pushClient([USER_ID], PushSendMessageObject)
+          .then((body) => {
+            console.log(body);
+          }, (e) => {console.log(e)});
+
+        console.log(data.text);
+    }
+
+    if (data.text.indexOf'湘南新宿ライン') !== -1) {
+        let PushSendMessageObject = [{
+          type: 'text',
+          text: data.text
+        }];
+
+        pushClient([USER_ID], PushSendMessageObject)
+          .then((body) => {
+            console.log(body);
+          }, (e) => {console.log(e)});
+
+        console.log(data.text);
+    }
+
+    if (data.text.indexOf'東横線') !== -1) {
+        let PushSendMessageObject = [{
+          type: 'text',
+          text: data.text
+        }];
+
+        pushClient([USER_ID], PushSendMessageObject)
+          .then((body) => {
+            console.log(body);
+          }, (e) => {console.log(e)});
+
+        console.log(data.text);
+    }
+
+    if (data.text.indexOf('目黒線') !== -1) {
         let PushSendMessageObject = [{
           type: 'text',
           text: data.text
