@@ -58,7 +58,7 @@ const pushClient = (userId, SendMessageObject) => {
 
 tw.stream('statuses/filter', {'track': TARGET_HASHTAG}, (stream) => {
   stream.on('data', (data) => {
-    if (data.text.indexOf('上野東京ライン') !== -1) {
+    if (data.text.indexOf('TrainDelay') !== -1) {
         let PushSendMessageObject = [{
           type: 'text',
           text: data.text
