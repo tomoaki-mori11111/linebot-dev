@@ -58,7 +58,7 @@ const pushClient = (userId, SendMessageObject) => {
 
 tw.stream('statuses/filter', {'track': TARGET_HASHTAG}, (stream) => {
   stream.on('data', (data) => {
-    if (data.text.indexOf('xrp') !== -1) {
+    if (data.text.indexOf('“ì•ü' || '‰¡{‰êü' || 'Ã“ìVhƒ‰ƒCƒ“' || '“Œ‰¡ü' || '–Ú•ü') !== -1) {
         let PushSendMessageObject = [{
           type: 'text',
           text: data.text
