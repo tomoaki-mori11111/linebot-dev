@@ -10,9 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "moment": "^2.20.1",
     "twitter": "^1.7.0"
   },
-  "engines":{
+  "engines": {
     "node": "6.6.0"
   }
 }
